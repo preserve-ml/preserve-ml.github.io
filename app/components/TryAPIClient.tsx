@@ -2,12 +2,11 @@
 
 import { useMemo, useState } from "react";
 
-const DEFAULT_GENERATE_URL =
-  process.env.NEXT_PUBLIC_PRESERVE_API_GENERATE_URL ||
-  "https://achinth-b--synthetic-api-generate.modal.run";
-const DEFAULT_HEALTH_URL =
-  process.env.NEXT_PUBLIC_PRESERVE_API_HEALTH_URL ||
-  "https://achinth-b--synthetic-api-health.modal.run";
+const DEFAULT_BASE_URL =
+  process.env.NEXT_PUBLIC_PRESERVE_API_BASE_URL ||
+  "https://achinth-b--synthetic-api-fastapi-app.modal.run";
+const DEFAULT_GENERATE_URL = `${DEFAULT_BASE_URL}/generate`;
+const DEFAULT_HEALTH_URL = `${DEFAULT_BASE_URL}/health`;
 
 function parseSentences(text: string): string[] {
   return text
